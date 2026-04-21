@@ -1,3 +1,7 @@
+Jan Kozłowski 117364
+Adrian Lachowicz 117262
+Paweł Gronostajski 117263
+
 1. Cel projektu
 Celem projektu jest zaprojektowanie i zamodelowanie systemu informatycznego, który zarządza funkcjonowaniem nekromantycznej biblioteki żywych ksiąg. System ma umożliwiać kontrolę zachowania ksiąg, ich wypożyczania, karmienia, monitorowania nastroju, reagowania na incydenty, obsługi klątw oraz zarządzania relacjami między księgami.
 Projekt ma zostać wykonany w formie kompletnej dokumentacji UML oraz opisu funkcjonalnego systemu.
