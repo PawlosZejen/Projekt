@@ -1,7 +1,7 @@
 Skład zespołu:
 1) Jan Kozłowski 117364
 2) Paweł Gronostajski 117263
-3) Adrian Lachiwicz 117262
+3) Adrian Lachowicz 117262
 
 Właściciel starożytnej, nekromantycznej Biblioteki Żywych Ksiąg, od setek lat zarządzał swoim zbiorem w sposób tradycyjny. Wszystkie księgi były doglądane ręcznie, karmione według pamięci, a ich nastroje oceniane intuicyjnie. Czarodziej sam prowadził rejestr wypożyczeń, osobiście uspokajał rozdrażnione tomy i własnoręcznie spisywał raporty o incydentach, takich jak ucieczki czy rzucanie klątw. Przez długi czas radził sobie sam, wspierany jedynie przez kilku adeptów, którzy pomagali mu w najprostszych zadaniach.
 
