@@ -1,1 +1,31 @@
+1. Jan Kozłowski
+2. Adrian Lachowicz
+3. Paweł Gronostajski
 
+Temat projektu:
+Regionalne Centrum Krwiodawstwa zajmuje się pobieraniem, badaniem oraz dystrybucją krwi i
+jej składników do szpitali. Proces obsługi rozpoczyna się od zgłoszenia się dawcy, który
+przechodzi wstępną weryfikację w bazie danych pod kątem kwalifikowalności do donacji oraz
+zachowania odpowiednich odstępów czasowych od poprzednich zabiegów. Po pobraniu krew
+trafia do laboratorium, gdzie jest badana i rozdzielana na osocze, płytki krwi oraz krwinki
+czerwone. Każda jednostka krwi jest identyfikowana przez unikalny kod donacji, grupę krwi,
+czynnik Rh oraz aktualny status przydatności. System na bieżąco monitoruje daty ważności
+poszczególnych składników i automatycznie blokuje te, których termin przydatności upłynął.
+Szpitale składają zapotrzebowanie na konkretne grupy krwi poprzez system, a każda prośba jest
+nadzorowana przez pracowników banku krwi. Podczas wydawania preparatu system wykonuje
+automatyczną walidację zgodności grupy krwi dawcy i biorcy. W przypadku wykrycia
+niezgodności, system przerywa proces i wyświetla alert o błędzie krytycznym, uniemożliwiając
+wydanie paczki. Całość pracy wspierana jest przez integrację z czujnikami temperatury w
+lodówkach. Jeśli temperatura wykroczy poza normę, system automatycznie zmienia status
+przypisanych tam jednostek na kwarantannę i blokuje ich wydawanie.
+
+W celu usprawnienia pracy i zwiększenia bezpieczeństwa, firma zdecydowała się na
+modernizację systemu i wprowadzenie dodatkowych modułów cyfrowych. Proces komunikacji z
+dawcami ma zostać zmodernizowany poprzez aplikację mobilną, która na podstawie stanów
+magazynowych będzie automatycznie wysyłać powiadomienia o pilnej potrzebie oddania
+konkretnej grupy krwi. Dodatkowo system ma gromadzić szczegółowe dane o wszystkich
+donacjach i na ich podstawie tworzyć statystyki dotyczące zapotrzebowania w danym regionie.
+Nowoczesne rozwiązania mają na celu całkowite wyeliminowanie pomyłek przy wydawaniu krwi
+oraz lepsze zarządzanie zasobami o krótkim terminie ważności. Dzięki automatyzacji procesów
+kwarantanny i logistyki wydań, personel zostanie odciążony z ręcznego sprawdzania
+dokumentacji, co pozwoli na szybszą reakcję w sytuacjach ratowania życia.
