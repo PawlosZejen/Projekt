@@ -1,0 +1,2 @@
+- sprawdzić poprawność
+- przerobić na cyfrowo w plantUML
