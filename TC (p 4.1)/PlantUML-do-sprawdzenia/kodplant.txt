@@ -1,0 +1,88 @@
+@startuml
+left to right direction
+
+actor "Pracownik Rejestracji"
+actor "Pracownik Laboratorium"
+actor "Pracownik Magazynu"
+actor "System\n(Czujniki)" 
+actor "Szpital"
+actor "Pracownik Wydań"
+actor "Administrator"
+
+rectangle "System Regionalnego Centrum Krwiodawstwa (RCK)" {
+  
+  package "Moduł Dawcy" {
+    usecase "Rejestracja dawcy"
+    usecase "Weryfikacja kwalifikowalności"
+    usecase "Odrzucenie dawcy (zbyt krótki odstęp)"
+    usecase "Wysyłanie powiadomień o brakach"
+    usecase "Wyszukiwanie dawcy"
+  }
+  
+  package "Moduł Laboratorium" {
+    usecase "Badanie i rozdział składników krwi"
+    usecase "Zlecenie utylizacji (wynik dyskwalifikujący)"
+    usecase "Podgląd donacji przed podziałem"
+    usecase "Dodawanie dotacji"
+  }
+  
+  package "Moduł Magazyn" {
+    usecase "Monitorowanie temperatur w lodówkach"
+    usecase "Automatyczna kwarantanna przy alarmie i blokada"
+    usecase "Automatyczna blokada przeterminowanych"
+    usecase "Podgląd jednostek w kwarantannie"
+    usecase "Filtrowanie magazynu (np. bliska ważność)"
+    usecase "Zarządzanie i usuwanie jednostek"
+  }
+  
+  package "Moduł Wydania" {
+    usecase "Wydanie preparatu"
+    usecase "Walidacja zgodności grupy krwi"
+    usecase "Przerwanie procesu i alert o błędzie"
+    usecase "Rejestracja zapotrzebowania"
+  }
+  
+  package "Moduł Analityka" {
+    usecase "Przegląd statystyk donacji i zapotrzebowań"
+    usecase "Generowanie raportów"
+  }
+  
+  package "Moduł Administracja" {
+    usecase "Zarządzanie użytkownikami"
+    usecase "Filtrowanie użytkowników po roli"
+    usecase "Konfiguracja czujników temperatury"
+  }
+}
+
+"Pracownik Rejestracji" --> "Rejestracja dawcy"
+"Pracownik Rejestracji" --> "Wysyłanie powiadomień o brakach"
+"Pracownik Rejestracji" --> "Wyszukiwanie dawcy"
+
+"Rejestracja dawcy" ..> "Weryfikacja kwalifikowalności" : <<include>>
+"Weryfikacja kwalifikowalności" <.. "Odrzucenie dawcy (zbyt krótki odstęp)" : <<extend>>
+
+"Pracownik Laboratorium" --> "Podgląd donacji przed podziałem"
+"Pracownik Laboratorium" --> "Badanie i rozdział składników krwi"
+"Pracownik Laboratorium" --> "Dodawanie dotacji"
+"Badanie i rozdział składników krwi" <.. "Zlecenie utylizacji (wynik dyskwalifikujący)" : <<extend>>
+
+"Pracownik Magazynu" --> "Podgląd jednostek w kwarantannie"
+"Pracownik Magazynu" --> "Filtrowanie magazynu (np. bliska ważność)"
+"Pracownik Magazynu" --> "Zarządzanie i usuwanie jednostek"
+"System\n(Czujniki)" --> "Monitorowanie temperatur w lodówkach"
+"System\n(Czujniki)" --> "Automatyczna blokada przeterminowanych"
+"Monitorowanie temperatur w lodówkach" <.. "Automatyczna kwarantanna przy alarmie i blokada" : <<extend>>
+
+"Pracownik Wydań" --> "Wydanie preparatu"
+"Szpital" --> "Rejestracja zapotrzebowania"
+"Pracownik Wydań" --> "Rejestracja zapotrzebowania"
+"Wydanie preparatu" ..> "Walidacja zgodności grupy krwi" : <<include>>
+"Walidacja zgodności grupy krwi" <.. "Przerwanie procesu i alert o błędzie" : <<extend>>
+
+"Administrator" --> "Przegląd statystyk donacji i zapotrzebowań"
+"Administrator" --> "Generowanie raportów"
+
+"Administrator" --> "Zarządzanie użytkownikami"
+"Administrator" --> "Filtrowanie użytkowników po roli"
+"Administrator" --> "Konfiguracja czujników temperatury"
+@enduml
