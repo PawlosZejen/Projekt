@@ -23,7 +23,7 @@ rectangle "System Regionalnego Centrum Krwiodawstwa (RCK)" {
     usecase "Badanie i rozdział składników krwi"
     usecase "Zlecenie utylizacji (wynik dyskwalifikujący)"
     usecase "Podgląd donacji przed podziałem"
-    usecase "Dodawanie dotacji"
+    usecase "Dodawanie donacji"
   }
   
   package "Moduł Magazyn" {
@@ -63,7 +63,7 @@ rectangle "System Regionalnego Centrum Krwiodawstwa (RCK)" {
 
 "Pracownik Laboratorium" --> "Podgląd donacji przed podziałem"
 "Pracownik Laboratorium" --> "Badanie i rozdział składników krwi"
-"Pracownik Laboratorium" --> "Dodawanie dotacji"
+"Pracownik Laboratorium" --> "Dodawanie donacji"
 "Badanie i rozdział składników krwi" <.. "Zlecenie utylizacji (wynik dyskwalifikujący)" : <<extend>>
 
 "Pracownik Magazynu" --> "Podgląd jednostek w kwarantannie"
