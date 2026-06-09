@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>198</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;device&gt;&gt;
+Czujnik Temperatury [15]
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>18</x>
+      <y>54</y>
+      <w>153</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>symbol=artifact
+&lt;&lt;exe&gt;&gt;
+OdczytCzujnika
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>351</x>
+      <y>0</y>
+      <w>315</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;device&gt;&gt;
+Lodówka Magazynowa [15]
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>468</x>
+      <y>72</y>
+      <w>180</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;exe&gt;&gt;
+ModulKontroliTemperatury
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>90</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=()-
+IInterfejsCzujnika</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>45</y>
+      <w>135</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=()-
+IKonfiguracjaLodowki</panel_attributes>
+    <additional_attributes>20.0;10.0;120.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>162</x>
+      <y>63</y>
+      <w>234</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;240.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>117</x>
+      <y>144</y>
+      <w>216</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;device&gt;&gt;
+System Szpitalny [5]
+Serwer Zewnętrzny
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>135</x>
+      <y>207</y>
+      <w>180</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;exe&gt;&gt;
+ModulZapotrzebowan
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>90</x>
+      <y>315</y>
+      <w>243</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;device&gt;&gt;
+Stacja Administratora [2]
+Intel Core i7, 16 GB RAM
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>117</x>
+      <y>378</y>
+      <w>189</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;exe&gt;&gt;
+PanelAdministratora
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>288</x>
+      <y>477</y>
+      <w>261</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;device&gt;&gt;
+Stacja Pracownika RCK [20]
+Intel Core i5, 8 GB RAM
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>324</x>
+      <y>540</y>
+      <w>189</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;exe&gt;&gt;
+PanelPracownika
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>396</x>
+      <y>180</y>
+      <w>99</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>Internet
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>486</x>
+      <y>360</y>
+      <w>135</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;switch&gt;&gt;
+Switch [1]
+Urządzenie sieciowe
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>720</x>
+      <y>18</y>
+      <w>522</w>
+      <h>648</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;device&gt;&gt;
+Serwer Główny [1]
+8x Xeon-3.2GHz, 64 GB RAM
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>846</x>
+      <y>90</y>
+      <w>180</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;dll&gt;&gt;
+ModulMagazynu
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>846</x>
+      <y>180</y>
+      <w>180</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;dll&gt;&gt;
+ModulWydania
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>846</x>
+      <y>270</y>
+      <w>180</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;dll&gt;&gt;
+ModulAdministracji
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>846</x>
+      <y>360</y>
+      <w>180</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;dll&gt;&gt;
+ModulDawcy
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>846</x>
+      <y>450</y>
+      <w>180</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;dll&gt;&gt;
+ModulLaboratorium
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>846</x>
+      <y>540</y>
+      <w>180</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;dll&gt;&gt;
+ModulAnalityki
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1098</x>
+      <y>288</y>
+      <w>63</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=()-
+IZapis</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1098</x>
+      <y>342</y>
+      <w>63</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=()-
+IOdczyt</panel_attributes>
+    <additional_attributes>10.0;30.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>99</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=()-
+IPomiaryTemp</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>747</x>
+      <y>189</y>
+      <w>117</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=()-
+IZapotrzebowania</panel_attributes>
+    <additional_attributes>20.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>279</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=()-
+IZarzadzanie</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>369</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=()-
+IObslugaDawcow</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>738</x>
+      <y>459</y>
+      <w>144</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=()-
+IObslugaLaboratorium</panel_attributes>
+    <additional_attributes>30.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>747</x>
+      <y>549</y>
+      <w>117</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=()-
+IPrzegladAnalityki</panel_attributes>
+    <additional_attributes>20.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1017</x>
+      <y>99</y>
+      <w>135</w>
+      <h>207</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;50.0;100.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1017</x>
+      <y>117</y>
+      <w>99</w>
+      <h>297</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;310.0;90.0;290.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1017</x>
+      <y>198</y>
+      <w>108</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;50.0;100.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1017</x>
+      <y>216</y>
+      <w>108</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;130.0;100.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1017</x>
+      <y>270</y>
+      <w>99</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1017</x>
+      <y>378</y>
+      <w>27</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1017</x>
+      <y>369</y>
+      <w>117</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;110.0;110.0;120.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1017</x>
+      <y>297</y>
+      <w>108</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;190.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1017</x>
+      <y>360</y>
+      <w>189</w>
+      <h>207</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;210.0;190.0;160.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>639</x>
+      <y>99</y>
+      <w>135</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>306</x>
+      <y>198</y>
+      <w>468</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;40.0;500.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>297</x>
+      <y>288</y>
+      <w>486</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;100.0;520.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>378</y>
+      <w>279</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;190.0;290.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>468</y>
+      <w>279</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;100.0;290.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>549</y>
+      <w>279</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;290.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>27</y>
+      <w>486</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>520.0;90.0;340.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>189</x>
+      <y>36</y>
+      <w>180</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-
+&lt;&lt;Ethernet&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;30.0;180.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>468</x>
+      <y>432</y>
+      <w>99</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-
+&lt;&lt;Ethernet&gt;&gt;</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>324</x>
+      <y>369</y>
+      <w>180</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=-
+&lt;&lt;Ethernet&gt;&gt;</panel_attributes>
+    <additional_attributes>180.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>513</x>
+      <y>144</y>
+      <w>117</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>lt=-
+&lt;&lt;Ethernet&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;240.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>324</x>
+      <y>189</y>
+      <w>90</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>486</x>
+      <y>162</y>
+      <w>252</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=-
+&lt;&lt;Światłowód&gt;&gt;</panel_attributes>
+    <additional_attributes>260.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>612</x>
+      <y>351</y>
+      <w>126</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-
+&lt;&lt;Światłowód&gt;&gt;</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1017</x>
+      <y>288</y>
+      <w>99</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1017</x>
+      <y>288</y>
+      <w>99</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;90.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1017</x>
+      <y>360</y>
+      <w>99</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;30.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>1143</x>
+      <y>306</y>
+      <w>90</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;db&gt;&gt;
+BazaRCK
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
