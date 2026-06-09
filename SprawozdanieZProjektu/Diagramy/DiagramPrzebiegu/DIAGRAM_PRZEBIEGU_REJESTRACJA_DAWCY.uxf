@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>154</x>
+      <y>63</y>
+      <w>21</w>
+      <h>707</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;990.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>343</x>
+      <y>63</y>
+      <w>21</w>
+      <h>700</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;980.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>511</x>
+      <y>63</y>
+      <w>21</w>
+      <h>707</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;990.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>609</y>
+      <w>21</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>154</x>
+      <y>91</y>
+      <w>14</w>
+      <h>644</h>
+    </coordinates>
+    <panel_attributes>bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>343</x>
+      <y>119</y>
+      <w>14</w>
+      <h>567</h>
+    </coordinates>
+    <panel_attributes>bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>511</x>
+      <y>322</y>
+      <w>14</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>700</x>
+      <y>630</y>
+      <w>14</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>112</x>
+      <y>0</y>
+      <w>112</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;user&gt;&gt;
+: Pracownik Rejestracji</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>280</x>
+      <y>35</y>
+      <w>154</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>: Interfejs(Moduł Dawcy)
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>469</x>
+      <y>35</y>
+      <w>98</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>: Rejestracja
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>175</x>
+      <y>70</y>
+      <w>168</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>Wprowadzenie danych wraz
+z walidacją i kwalifikacją
+bg=#ffffe0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>161</x>
+      <y>105</y>
+      <w>196</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+1: WprowadzDane()</panel_attributes>
+    <additional_attributes>10.0;20.0;255.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>140</y>
+      <w>154</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+2:
+sprawdzPoprawnosc()</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0;60.0;30.0;20.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>350</x>
+      <y>161</y>
+      <w>14</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>196</y>
+      <w>140</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;return&gt;&gt;
+3: bDanePoprawne</panel_attributes>
+    <additional_attributes>20.0;10.0;60.0;10.0;60.0;30.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>91</x>
+      <y>231</y>
+      <w>679</w>
+      <h>490</h>
+    </coordinates>
+    <panel_attributes>alt
+--
+[!bDanePoprawne]
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>161</x>
+      <y>259</y>
+      <w>196</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;return&gt;&gt;
+4: Wyswietl bledy i
+otworz do poprawy</panel_attributes>
+    <additional_attributes>255.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>84</x>
+      <y>294</y>
+      <w>686</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;960.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>98</x>
+      <y>301</y>
+      <w>42</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>[else]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>308</y>
+      <w>175</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+5:
+zarejestrujDawce(dane)</panel_attributes>
+    <additional_attributes>10.0;20.0;225.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>518</x>
+      <y>343</y>
+      <w>203</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+6:
+weryfikujKwalifikowalnosc(dawca)</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0;60.0;30.0;20.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>518</x>
+      <y>364</y>
+      <w>14</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>518</x>
+      <y>392</y>
+      <w>140</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;return&gt;&gt;
+7: bKwalifikujeSie</panel_attributes>
+    <additional_attributes>20.0;10.0;70.0;10.0;70.0;30.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>98</x>
+      <y>427</y>
+      <w>658</w>
+      <h>273</h>
+    </coordinates>
+    <panel_attributes>alt
+--
+[!bKwalifikujeSie]
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>518</x>
+      <y>434</y>
+      <w>189</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+8:
+odrzucDawcePowod(powod)</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0;70.0;40.0;20.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>518</x>
+      <y>462</y>
+      <w>14</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>518</x>
+      <y>497</y>
+      <w>119</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;return&gt;&gt;
+9: odrzucono</panel_attributes>
+    <additional_attributes>20.0;10.0;70.0;10.0;70.0;40.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>518</y>
+      <w>175</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;return&gt;&gt;
+10: Odrzucenie</panel_attributes>
+    <additional_attributes>225.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>161</x>
+      <y>546</y>
+      <w>196</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;return&gt;&gt;
+11: Komunikat (Brak
+kwalifikacji)</panel_attributes>
+    <additional_attributes>255.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>98</x>
+      <y>574</y>
+      <w>665</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;930.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>105</x>
+      <y>581</y>
+      <w>42</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>[else]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>672</x>
+      <y>588</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>: Dawca
+bg=#e6e6fa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>518</x>
+      <y>602</y>
+      <w>168</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;
+&lt;&lt;create&gt;&gt;
+12: Dawca()</panel_attributes>
+    <additional_attributes>10.0;20.0;215.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>518</x>
+      <y>644</y>
+      <w>196</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;return&gt;&gt;
+13: d</panel_attributes>
+    <additional_attributes>260.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>651</y>
+      <w>175</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;return&gt;&gt;
+14: Sukces</panel_attributes>
+    <additional_attributes>225.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>161</x>
+      <y>672</y>
+      <w>196</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;return&gt;&gt;
+15: Informacja o
+dopuszczeniu</panel_attributes>
+    <additional_attributes>255.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>105</x>
+      <y>756</y>
+      <w>112</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;user&gt;&gt;
+: Pracownik Rejestracji</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>273</x>
+      <y>749</y>
+      <w>154</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>: Interfejs(Moduł Dawcy)
+bg=#e6e6fa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>469</x>
+      <y>756</y>
+      <w>98</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>: Rejestracja
+bg=#e6e6fa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>672</x>
+      <y>749</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>: Dawca
+bg=#e6e6fa</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

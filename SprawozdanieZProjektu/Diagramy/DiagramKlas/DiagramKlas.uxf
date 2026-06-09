@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>320</x>
+      <y>36</y>
+      <w>320</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>Moduł Administracja
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>288</y>
+      <w>168</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>Moduł Dawcy
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>184</x>
+      <y>288</y>
+      <w>180</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>Moduł Laboratorium
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>376</x>
+      <y>284</y>
+      <w>180</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Moduł Analityka
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>568</x>
+      <y>288</y>
+      <w>168</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>Moduł Magazyn
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>820</x>
+      <y>296</y>
+      <w>260</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>Moduł Wydania
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>48</y>
+      <w>140</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Administracja
+--
++ zarzadzajUzytkownikami() : void
++ filtrujUzytkownikow(rola : string) : List&lt;Uzytkownik&gt;
++ konfigurujCzujnikiTemperatury() : void
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>120</y>
+      <w>80</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+Uzytkownik
+--
+- idUzytkownika : int
+- imie : string
+- rola : string
+- czyAktywny : bool
+--
++ zaloguj() : bool
++ wyloguj() : bool
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>328</x>
+      <y>200</y>
+      <w>60</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>PracownikRejestracji
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>392</x>
+      <y>200</y>
+      <w>64</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>PracownikLaboratorium
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>200</y>
+      <w>40</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>Administrator
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>200</y>
+      <w>56</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>PracownikMagazynu
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>564</x>
+      <y>200</y>
+      <w>48</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>PracownikWydan
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>8</x>
+      <y>304</y>
+      <w>152</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>Rejestracja
+--
++ wyszukajDawce(id : string) : Dawca
++ zarejestrujDawce(dane : Dawca) : void
++ weryfikujKwalifikowalnosc(dawca : Dawca) : bool
++ odrzucDawcePowod(powod : string) : void
++ wyslijPowiadomienieODawcach(grupaKrwi : string) : void
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>24</x>
+      <y>388</y>
+      <w>100</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Dawca
+--
+- idDawcy : int
+- imie : string
+- nazwisko : string
+- grupaKrwi : string
+- czynnikRh : string
+- dataOstatniejDonacji : date
+- kwalifikowalny : bool
+- skladniki : List&lt;Donacja&gt;
+--
++ zweryfikujKwalifikacje() : bool
++ zarejestrujDonacje() : void
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>308</y>
+      <w>152</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>Laboratorium
+--
++ dodajDonacje(dawca : Dawca) : Donacja
++ rozdzielSkladniki(donacja : Donacja) : List&lt;SkladnikKrwi&gt;
++ zlecUtylizacje(donacja : Donacja) : void
++ podgladDonacji(id : string) : Donacja
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>228</x>
+      <y>388</y>
+      <w>88</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Donacja
+--
+- kodDonacji : string
+- dataPobrania : date
+- status : string
+- wynikiBadania : WynikBadania
+- skladniki : List&lt;SkladnikKrwi&gt;
+--
++ oznaczStatus() : void
++ czyKompletna() : bool
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>192</x>
+      <y>480</y>
+      <w>76</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>WynikBadania
+--
+- idWyniku : int
+- status : string
+- opis : string
+--
++ czyPozytywny() : bool
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>476</y>
+      <w>76</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>SkladnikKrwi
+--
+- idSkladnika : int
+- typ : string
+- grupaKrwi : string
+- czynnikRh : string
+- dataWaznosci : date
+- status : string
+--
++ sprawdzWaznosc() : bool
++ oznaczPrzeterminowany() : void
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>388</x>
+      <y>300</y>
+      <w>164</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Analityka
+--
++ generujRaporty() : Raport
++ przegladajStatystyki() : Statystyka
++ statystykiWOkresie(dataOd : date, dataDo : date) : Statystyka
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>392</x>
+      <y>376</y>
+      <w>68</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Raport
+--
+- idRaportu : int
+- dataGenerowania : date
+- typ : string
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>464</x>
+      <y>372</y>
+      <w>88</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>Statystyka
+--
+- liczbaDonacji : int
+- liczbaZapotrzebowan : int
+- liczbaDostepnychJednostek : int
+- okresOd : date
+- okresDo : date
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>572</x>
+      <y>304</y>
+      <w>160</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Magazyn
+--
+- jednostki : List&lt;SkladnikKrwi&gt;
+--
++ rejestrujJednostke(skl : SkladnikKrwi) : void
++ usunJednostke(id : string) : void
++ podgladWydanych() : List&lt;SkladnikKrwi&gt;
++ filtrujDostepne(grupa : string, rh : string) : List&lt;SkladnikKrwi&gt;
++ filtrujKrotkiTerminWaznosci(dni : int) : List&lt;SkladnikKrwi&gt;
++ automatycznaBlokadaPrzeterminowanych() : void
++ sprawdzBrakujaceStany() : List&lt;string&gt;
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>604</x>
+      <y>428</y>
+      <w>112</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>Lodowka
+--
+- idLodowki : int
+- temperaturaDocelowaMin : float
+- temperaturaDocelowaMax : float
+--
++ sprawdzTemperature() : bool
++ pobierzSkladniki() : List&lt;SkladnikKrwi&gt;
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>592</x>
+      <y>520</y>
+      <w>132</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>CzujnikTemperatury
+--
+- idCzujnika : int
+- aktualnaTemperatura : float
+- statusAlarmu : bool
+- zakresMin : float
+- zakresMax : float
+--
++ odczytajTemperature() : float
++ wyslijAlert() : void
++ ustawZakresMinMax(min : float, max : float) : void
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>888</x>
+      <y>308</y>
+      <w>80</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Szpital
+--
+- idSzpitala : int
+- nazwa : string
+--
++ zlozZapotrzebowanie() : void
++ odbierzPreparat() : void
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>824</x>
+      <y>368</y>
+      <w>248</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Wydanie
+--
++ zarejestrujZapotrzebowanie(szpital : Szpital, grupa : string, ilosc : int) : Zapotrzebowanie
++ wydajPreparat(zapotrzebowanie : Zapotrzebowanie) : void
++ walidujZgodnoscGrupyKrwi(skladnik : SkladnikKrwi, zapotrzebowanie : Zapotrzebowanie) : bool
++ przerwijProces(alert : string) : void
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>868</x>
+      <y>444</y>
+      <w>80</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>Zapotrzebowanie
+--
+- idZapotrzebowania : int
+- grupaKrwi : string
+- ilosc : int
+- status : string
+--
++ walidujZgodnosc() : bool
++ przerwijProces() : void
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>468</x>
+      <y>80</y>
+      <w>20</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>356</x>
+      <y>176</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>176</y>
+      <w>44</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>468</x>
+      <y>176</y>
+      <w>20</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>488</x>
+      <y>176</y>
+      <w>52</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>176</y>
+      <w>92</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>68</x>
+      <y>200</y>
+      <w>268</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>650.0;10.0;80.0;20.0;10.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>284</x>
+      <y>208</y>
+      <w>148</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>350.0;10.0;70.0;50.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>488</x>
+      <y>80</y>
+      <w>44</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;300.0;90.0;250.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>208</y>
+      <w>132</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;310.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>584</x>
+      <y>208</y>
+      <w>332</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;340.0;30.0;810.0;400.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>24</x>
+      <y>352</y>
+      <w>64</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+wyszukuje / rejestruje
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>348</y>
+      <w>20</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>404</y>
+      <w>116</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;270.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>244</x>
+      <y>440</y>
+      <w>16</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>20.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>440</y>
+      <w>20</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1..*</panel_attributes>
+    <additional_attributes>20.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>408</x>
+      <y>332</y>
+      <w>24</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>468</x>
+      <y>332</y>
+      <w>24</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>644</x>
+      <y>372</y>
+      <w>20</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0..*
+m1=1</panel_attributes>
+    <additional_attributes>30.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>468</y>
+      <w>20</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1..*
+m1=1</panel_attributes>
+    <additional_attributes>20.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>352</x>
+      <y>448</y>
+      <w>260</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=0..*
+m1=1</panel_attributes>
+    <additional_attributes>630.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>912</x>
+      <y>344</y>
+      <w>24</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>892</x>
+      <y>412</y>
+      <w>20</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>944</x>
+      <y>328</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>60.0;10.0;390.0;80.0;400.0;310.0;10.0;350.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>728</x>
+      <y>368</y>
+      <w>104</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+wydaje_preparaty
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>240.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>352</x>
+      <y>412</y>
+      <w>520</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>1280.0;10.0;910.0;520.0;330.0;460.0;10.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>912</x>
+      <y>412</y>
+      <w>32</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+waliduje</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>352</x>
+      <y>372</y>
+      <w>260</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+</panel_attributes>
+    <additional_attributes>630.0;10.0;570.0;250.0;10.0;360.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>536</x>
+      <y>68</y>
+      <w>296</w>
+      <h>488</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;720.0;290.0;690.0;920.0;470.0;1200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>484</x>
+      <y>332</y>
+      <w>392</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;260.0;140.0;590.0;200.0;960.0;330.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>312</x>
+      <y>328</y>
+      <w>84</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>236</y>
+      <w>444</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+wywoluje wyslijPowiadomienieOBrakach</panel_attributes>
+    <additional_attributes>10.0;170.0;190.0;20.0;1070.0;30.0;1090.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>96</x>
+      <y>352</y>
+      <w>36</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+kwalifikuje</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>312</x>
+      <y>260</y>
+      <w>268</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+przekazuje skladniki_Laboratorium_Magazyn</panel_attributes>
+    <additional_attributes>650.0;120.0;610.0;20.0;100.0;20.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>492</x>
+      <y>208</y>
+      <w>40</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;230.0</additional_attributes>
+  </element>
+</diagram>

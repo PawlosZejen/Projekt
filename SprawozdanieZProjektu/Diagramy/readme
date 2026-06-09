@@ -1,1 +1,963 @@
+Wydział Informatyki Politechniki Białostockiej
+Przedmiot: Inżynieria Oprogramowania
+Data:  09.06.2026 r.
+Temat: Projekt 
+Grupa: PS 9
+Imię i nazwisko:
+Jan Kozłowski 117364
+Adrian Lachowicz 117262
+Paweł Gronostajski 117263
+Prowadzący: 
+mgr. inż. Tomasz Hordjewicz
+
+Skład zespołu oraz procentowy podział pracy w trakcie realizacji:
+Jan Kozłowski - 30%
+Adrian Lachowicz - 35%
+Paweł Gronostajski - 35%
+Proponowana punktacja:
+1. Treść zadania, cel, zakres, kontekst - 1 pkt
+Ocena poprawności zrozumienia problemu oraz kompletności opisu.
+2. Słownik pojęć - 0.5 pkt
+Spójność terminologii i zgodność z domeną.
+3. Perspektywa przypadków użycia - 3 pkt
+Diagram przypadków użycia - 1 pkt
+Opisy aktorów - 0.5 pkt
+Opisy przypadków użycia (min. 3) - 1 pkt
+Diagramy czynności - 0.5 pkt
+4. Perspektywa projektowa - 3 pkt
+Architektura systemu - 0.5 pkt
+Diagram klas - 1 pkt
+Opis klas - 0.5 pkt
+Diagramy stanów - 0.5 pkt
+Interfejs użytkownika - 0.5 pkt
+5. Wymagania niefunkcjonalne - 0.5 pkt
+Realizm, kompletność, spójność.
+6. Technologie + diagram wdrożenia - 0.5 pkt
+Dobór technologii, poprawność diagramu.
+7. Plan pracy - 0.5 pkt
+Etapy, zależności, alokacja zasobów.
+8. Analiza ryzyka - 0.5 pkt
+Zagrożenia, prawdopodobieństwo, skutki, plan awaryjny.
+9. Kosztorys - 0.5 pkt
+Realizm, rozbicie na moduły, warunki odbioru.
+10. Dodatek A - 0.5 pkt
+Historia commitów + struktura repozytorium.
+Adres repozytorium:
+https://github.com/PawlosZejen/Projekt
+
+Spis treści sprawozdania:
+1. Treść zadania projektowego
+2. Cel budowania systemu, jego zakres oraz kontekst, przewidywalne mierzalne (z podaniem konkretnych wartości i sposobów ich wyliczenia) i niemierzalne korzyści z jego wdrożenia
+3. Słownik (definiujący ważne, specyficzne terminy związane z dziedziną problemu, wykorzystywane w projekcie)
+4. Perspektywa przypadków użycia:
+    	4.1. Diagramy przypadków użycia
+       	4.1.1. Opisy tekstowe wszystkich aktorów
+       	4.1.2. Opisy tekstowe wybranych przypadków użycia:
+        		- nazwę przypadku
+        		- wykaz uczestniczących w nim aktorów
+        		- opis tekstowy ciągu zdarzeń, zarówno podstawowego jak i alternatywnych
+        		- częstotliwość wykonania, przewidywane spiętrzenia oraz czasy realizacji (typowy, maksymalny)
+        		- opis wartości uzyskiwanych przez aktorów po zakończeniu przypadku użycia
+    	4.2. Diagramy czynności
+    	4.3. Diagramy przebiegu z opisem tekstowym komunikatów
+5. Perspektywa projektowa:
+    	5.0. Proponowana architektura systemu (np. w postaci diagramu pakietów/komponentów) wraz z opisem
+    	5.1. Diagram klas
+    	5.2. Uporządkowany alfabetycznie wykaz wszystkich klas, zawierający:
+            	- krótki opis tekstowy
+            	- wykaz wszystkich zidentyfikowanych atrybutów i metod (z krótkim opisem tekstowym w przypadku mniej czytelnych nazw)
+    	5.3. Diagramy stanów wraz z opisem tekstowym występującym na nich elementów
+    	5.4. Propozycje interfejsu użytkownika (okno główne, menu główne i podręczne, kluczowe formatki dialogowe, itp...)
+6. Wymagania niefunkcjonalne dla system:
+    	6.1. Oszacowanie wielkości bazy danych
+    	6.2. Propozycja wymaganych czasów odpowiedzi
+    	6.3. Oszacowanie liczby i typów potrzebnych stanowisk pracy użytkowników systemu 
+7. Propozycja technologii informatycznych, które mogą zostać wykorzystane do realizacji systemu (sprzęt, oprogramowanie)
+    	- diagram wdrożenia
+8. Propozycja planu pracy zawierająca, przynajmniej:
+    	- wyróżnione etapy z podanym czasem trwania każdego etapu (dni robocze)
+    	- zależności pomiędzy etapami (np. co musi być zakończone przed rozpoczęciem kolejnego etapu)
+    	- alokacja zasobów ludzkich do realizacji poszczególnych etapów 
+9. Analiza ryzyka projektu zawierająca wykaz przewidywanych zagrożeń (tylko zagrożenia specyficzne dla projektu):
+    	- prawdopodobieństwo/szansa wystąpienia (np.: znikome, średnie, duże, bardzo duże)
+    	- stopień szkodliwości w przypadku wystąpienia (np.: duży, średni, mały)
+    	- propozycje metod zapobiegania danemu zagrożeniu
+    	- plan awaryjny (sposób postępowania) w przypadku wystąpienia zagrożenia
+  10. Kosztorys realizacji przedsięwzięcia (koszty projektu, oprogramowania, systemu, szkoleń, wdrożenia oraz konsultacji)
+    	- w rozbiciu na mniejsze jednostki (etapy, podsystemy, moduły,...)
+    	- warunki płatności, sposób odbioru
+    	- może być wariantowy
+  Dodatek A. Przebieg (terminowość) prac zespołu
+    	- wygenerowany wykres przedstawiający historię commit-ów do repozytorium autorów projektu.
+    	- struktura podkatalogów w repozytorium powinna być zgodna z terminami cząstkowymi oraz powinien istnieć oddzielny podkatalog z wersją edytowalną sprawozdania. 
+
+TREŚĆ PROJEKTU
+	Regionalne Centrum Krwiodawstwa zajmuje się pobieraniem, badaniem oraz dystrybucją krwi i jej składników do szpitali. Proces obsługi rozpoczyna się od zgłoszenia się dawcy, który przechodzi wstępną weryfikację w bazie danych pod kątem kwalifikowalności do donacji oraz zachowania odpowiednich odstępów czasowych od poprzednich zabiegów. Po pobraniu krew trafia do laboratorium, gdzie jest badana i rozdzielana na osocze, płytki krwi oraz krwinki czerwone. Każda jednostka krwi jest identyfikowana przez unikalny kod donacji, grupę krwi, czynnik Rh oraz aktualny status przydatności. System na bieżąco monitoruje daty ważności poszczególnych składników i automatycznie blokuje te, których termin przydatności upłynął. Szpitale składają zapotrzebowanie na konkretne grupy krwi poprzez system, a każda prośba jest nadzorowana przez pracowników banku krwi. Podczas wydawania preparatu system wykonuje automatyczną walidację zgodności grupy krwi dawcy i biorcy. W przypadku wykrycia niezgodności, system przerywa proces i wyświetla alert o błędzie krytycznym, uniemożliwiając wydanie paczki. Całość pracy wspierana jest przez integrację z czujnikami temperatury w lodówkach. Jeśli temperatura wykroczy poza normę, system automatycznie zmienia status przypisanych tam jednostek na kwarantannę i blokuje ich wydawanie.
+W celu usprawnienia pracy i zwiększenia bezpieczeństwa, firma zdecydowała się na modernizację systemu i wprowadzenie dodatkowych modułów cyfrowych. Proces komunikacji z dawcami ma zostać zmodernizowany poprzez aplikację mobilną, która na podstawie stanów magazynowych będzie automatycznie wysyłać powiadomienia o pilnej potrzebie oddania konkretnej grupy krwi. Dodatkowo system ma gromadzić szczegółowe dane o wszystkich donacjach i na ich podstawie tworzyć statystyki dotyczące zapotrzebowania w danym regionie. Nowoczesne rozwiązania mają na celu całkowite wyeliminowanie pomyłek przy wydawaniu krwi oraz lepsze zarządzanie zasobami o krótkim terminie ważności. Dzięki automatyzacji procesów kwarantanny i logistyki wydań, personel zostanie odciążony z ręcznego sprawdzania dokumentacji, co pozwoli na szybszą reakcję w sytuacjach ratowania życia.
+
+
+
+CEL BUDOWY SYSTEMU
+Głównym celem modernizacji jest podniesienie poziomu bezpieczeństwa, automatyzacja kluczowych procesów oraz ograniczenie ryzyka błędów ludzkich w Regionalnym Centrum Krwiodawstwa. System ma zapewnić pełną kontrolę nad wydawaniem krwi oraz skuteczniejsze zarządzanie zasobami o krótkim terminie ważności. 
+Cele szczegółowe:
+automatyzacja obsługi dawcy (weryfikacja kwalifikacji, odstępów czasowych),
+pełna cyfryzacja procesu badania, rozdzielania i monitorowania krwi,
+automatyczna kontrola temperatury i statusu kwarantanny,
+integracja z aplikacją mobilną dla dawców,
+generowanie statystyk dotyczących zapotrzebowania w danym regionie 
+Zakres systemu:
+Pulpit główny
+Zapewnienie szybkiego dostępu do kluczowych modułów systemu, natychmiastowy podgląd najważniejszych danych oraz wgląd w ostatnie wykonane operacje. 
+Moduł dawcy
+Szybki i prosty sposób rejestracji dawców z automatyczną weryfikacją, możliwość wyszukiwania dawcy za pomocą numeru PESEL lub nazwiska, wysyłanie powiadomień do dawców o zapotrzebowaniu na konkretne grupy krwi.
+Moduł laboratorium
+Formularz rejestracji donacji, panel zawierający informację o donacjach oczekujących na podział na poszczególne składniki, okno służące do wprowadzenia wyników badań oraz lista składników otrzymanych z donacji,
+Moduł magazyn
+Wyświetla aktualną zawartość magazynu, którą można filtrować według grup krwi, Rh oraz statusu, posiada również moduł monitorujący stan temperatury w lodówkach.
+Moduł wydania
+Zawiera listę szpitali oraz ich zapotrzebowanie na krew, formularz służący do wydawania szpitalom składników oraz panel zgodności wyświetlający wyniki walidacji,
+Moduł analityka
+Wyświetla statystyki donacji z wybranego okresu czasu, średnie miesięczne zapotrzebowanie na krew, zawiera również narzędzie do generowania raportów.
+Moduł Administracja
+Przedstawia wszystkich pracowników z dostępem do systemu z możliwością filtrowania według stanowiska, możliwość nadawania kont pracownikom oraz panel konfiguracyjny czujników temperatury.
+Kontekst:
+System będzie wspomagał pracę oraz działanie Regionalnego Centrum Krwiodawstwa, obejmującym pełny cykl zarządzania krwią - od rejestracji dawcy, poprzez procesy laboratoryjne, magazynowanie składników krwi, aż po wydawanie ich do szpitali. System będzie umożliwiał pracownikom laboratorium rejestrowanie donacji, automatyczne nadawanie kodów oraz przypisywanie wyników badań do odpowiednich pozycji. Przed dopuszczeniem jednostki do obiegu system będzie weryfikował kompletność danych oraz poprawność wyników badań, a w przypadku wykrycia nieprawidłowości automatycznie oznaczał jednostkę jako zablokowaną.
+Pracownicy magazynu będą mogli przeglądać aktualne stany magazynowe wszystkich grup krwi, zarządzać jednostkami (np. usuwanie przeterminowanych składników), a także monitorować warunki przechowywania dzięki integracji z czujnikami temperatury. System będzie automatycznie reagował na przekroczenia parametrów przechowywania, zmieniając status jednostek na kwarantannę, generując jednocześnie odpowiednie alerty.
+Moduł wydań umożliwi realizację zapotrzebowań zgłaszanych przez szpitale. Przed wydaniem system przeprowadza automatyczną walidację zgodności grup krwi dawcy i biorcy, blokując wydanie w przypadku niezgodności. System będzie posiadał panel dla administracji umożliwiający zarządzanie użytkownikami, nadawanie ról (administrator, laboratorium, magazyn, wydania), blokowane kont oraz konfigurację parametrów technicznych, takich jak zakresy temperatur dla poszczególnych lodówek. Administratorzy będą mogli także przeglądać historię operacji, generować raporty oraz analizować statystyki dotyczące donacji, zapotrzebowania i wykorzystania krwi.
+Mierzalne korzyści:
+Redukcja błędów wydania krwi o 100%:
+automatyzacja systemu wydawania wyeliminuje błędy popełniane przez pracowników przy wydawaniu krwi,
+sposób pomiaru: liczba błędnych wydań przed wdrożeniem vs. po wdrożeniu (miesięcznie).
+Skrócenie czasu obsługi dawcy o 30-40%:
+automatyczna weryfikacja kwalifikacji i historii donacji uprości proces.
+sposób pomiaru: średni czas od rejestracji do pobrania (przed/po).
+Zmniejszenie strat krwi z powodu przeterminowania o 25-35%:
+automatyczne monitorowanie terminów i powiadomienia, gdy zbliża się koniec terminu ważności.
+sposób pomiaru: liczba utylizowanych jednostek w skali miesiąca.
+Skrócenie czasu potrzebnego do reakcji na awarie temperatury o 90%:
+system automatycznie wysyła alert w momencie nastąpienia nagłej zmiany temperatury.
+sposób pomiaru: czas od przekroczenia temperatury do blokady jednostek.
+Zwiększenie liczby donacji o 10-20%:
+dawcy będą powiadamiani o brakach magazynowych za pomocą powiadomień z aplikacji mobilnej.
+sposób pomiaru: liczba donacji rok do roku.
+Niemierzalne korzyści:
+zwiększone bezpieczeństwo pacjentów,
+większe zaufanie szpitali do systemu wydawania krwi,
+poprawa komfortu i nakładu pracy personelu,
+ulepszona komunikacja z dawcami,
+poprawiona przejrzystość procesów i odpowiedzialności,
+poprawa wizerunku instytucji jako nowoczesnej i niezawodnej.
+
+
+
+
+
+
+
+
+SŁOWNIK
+Dawca - osoba zarejestrowana w systemie, która po pozytywnej weryfikacji może oddawać krew na potrzeby placówek medycznych.
+Donacja - pojedynczy proces oddania krwi przez dawcę, rejestrowany i przechowywany w systemie.
+Krew - materiał biologiczny pobierany od dawcy, poddawany badaniom oraz dalszemu przetwarzaniu.
+Składnik krwi - część krwi uzyskana w wyniku jej rozdzielenia, przeznaczona do przechowywania i wydania odbiorcy.
+Badanie krwi - proces laboratoryjnej analizy pobranej krwi mający na celu ocenę jej jakości i przydatności do dalszego wykorzystania.
+Laboratorium - jednostka odpowiedzialna za przeprowadzanie badań krwi oraz przygotowanie jej składników do magazynowania.
+Magazyn - miejsce przechowywania składników krwi w odpowiednich warunkach zapewniających ich bezpieczeństwo i jakość.
+Kwarantanna - specjalny stan składnika krwi, w którym zostaje on czasowo wyłączony z obrotu do momentu wyjaśnienia nieprawidłowości.
+Utylizacja - procedura usunięcia krwi lub jej składników, które nie spełniają wymagań jakościowych lub utraciły przydatność do użycia.
+Szpital - placówka medyczna korzystająca z systemu w celu zgłaszania zapotrzebowania na krew i jej składniki.
+Zapotrzebowanie - zgłoszenie utworzone przez szpital określające potrzebę otrzymania określonej ilości wybranego składnika krwi.
+Wydanie - proces przekazania odpowiedniego składnika krwi ze stanu magazynowego do szpitala po wcześniejszej weryfikacji zgodności.
+Grupa krwi - cecha biologiczna wykorzystywana podczas sprawdzania zgodności pomiędzy składnikiem krwi a zgłoszonym zapotrzebowaniem.
+Administrator - użytkownik posiadający uprawnienia do zarządzania danymi, użytkownikami oraz procesami realizowanymi w systemie.
+
+PERSPEKTYWA PRZYPADKÓW UŻYCIA
+Diagram przypadków użycia:
+
+Opisy aktorów:
+Pracownik rejestracji - Należy do zespołu obsługującego dawców w punkcie krwiodawstwa. Jego zadaniem jest wyszukiwanie istniejących dawców w systemie oraz rejestrowanie nowych osób zgłaszających się do oddania krwi. Podczas rejestracji odpowiada za przeprowadzenie weryfikacji dawcy, w tym sprawdzenie odstępu od poprzedniej donacji oraz ewentualne odrzucenie zgłoszenia, jeśli minimalny czas nie został zachowany. W sytuacjach niedoborów określonych składników krwi może inicjować wysyłanie powiadomień do dawców, aby zachęcić ich do oddania krwi. Jego praca zapewnia płynny przebieg procesu donacyjnego i poprawność danych w systemie.
+Pracownik laboratorium - Odpowiada za obsługę procesu badania i przetwarzania pobranej krwi. Dodaje do systemu informacje o nowych donacjach, a następnie wykonuje badania laboratoryjne oraz rozdziela krew na składniki (np. krwinki czerwone, osocze). W przypadku wykrycia wyników dyskwalifikujących może zlecić utylizację jednostki, aby zapobiec jej dalszemu wykorzystaniu. Ma również możliwość podglądu donacji przed podziałem.
+Pracownik magazynu - Zajmuje się zarządzaniem jednostkami krwi i jej składników po ich przetworzeniu. Może przeglądać i usuwać jednostki, kontrolować ich status oraz filtrować magazyn według różnych kryteriów, takich jak bliska data ważności. Odpowiada za monitorowanie jednostek znajdujących się w kwarantannie oraz reagowanie na automatyczne blokady jednostek przeterminowanych. Współpracuje z systemem czujników temperatury, które monitorują lodówki magazynowe. W przypadku alarmu system automatycznie oznacza jednostki jako podejrzane i przenosi je do kwarantanny, co pracownik magazynu musi następnie zweryfikować. Jego rola zapewnia bezpieczeństwo i jakość przechowywanej krwi.
+System (Czujniki) - Jest to zautomatyzowany aktor reprezentujący urządzenia monitorujące warunki przechowywania krwi. Jego zadaniem jest ciągłe odczytywanie temperatur w lodówkach magazynowych oraz zgłaszanie alarmów w przypadku przekroczenia dopuszczalnych wartości. W sytuacji wykrycia nieprawidłowości system automatycznie oznacza jednostki jako zagrożone, przenosi je do kwarantanny i blokuje ich wydanie do czasu weryfikacji przez pracownika. Czujniki pełnią kluczową rolę w zapewnieniu bezpieczeństwa biologicznego i zgodności z normami przechowywania.
+Szpital - Reprezentuje zewnętrzną instytucję medyczną zgłaszającą zapotrzebowanie na preparaty krwi. Może rejestrować zapotrzebowania na konkretne składniki krwi, określając ich ilość i grupę krwi. Jego interakcja z systemem inicjuje proces wydania jednostek z magazynu. 
+Pracownik Wydań - Odpowiada za realizację zapotrzebowań zgłaszanych przez szpitale. Rejestruje zapotrzebowania w systemie, a następnie wydaje odpowiednie jednostki krwi lub jej składników. Podczas wydania system wymusza przeprowadzenie walidacji zgodności grupy krwi. W przypadku niezgodności proces zostaje przerwany.
+Administrator - Zarządza konfiguracją i użytkownikami systemu RCK. Może tworzyć, edytować i usuwać konta użytkowników oraz nadawać im odpowiednie role, aby zapewnić właściwy poziom dostępu. Ma możliwość filtrowania użytkowników według ról, co ułatwia kontrolę nad strukturą organizacyjną systemu. Odpowiada również za konfigurację czujników temperatury w lodówkach. Jego zadaniem jest utrzymanie systemu w stanie umożliwiającym bezpieczne i zgodne z procedurami działanie wszystkich modułów. 
+Opisy przypadków użycia:
+Przypadek użycia “Wydanie preparatu”:
+1. Uczestniczący aktorzy
+Pracownik wydań
+2. Podstawowy ciąg zdarzeń
+Pracownik loguje się do systemu
+Następnie wybiera w menu moduł wydania
+W module wyświetla się zapotrzebowanie szpitali oraz formularz wydania preparatu
+Pracownik wypełnia formularz danymi 
+nazwa szpitala, 
+ID pacjenta, 
+grupa krwi biorcy - rozwijane menu, 
+Rh biorcy - rozwijane menu,
+kod jednostki do wydania
+Po wypełnieniu wszystkich pól pracownik naciska przycisk "Waliduj zgodność i wydaj"
+System weryfikuje poprawność wprowadzonych danych
+Następnie system waliduje zgodność preparatu z grupą krwi pacjenta
+W module wydania system wyświetla pozytywny wynik walidacji w oknie "Wynik walidacji zgodności"
+3. Alternatywne ciągi zdarzeń
+Brak zapotrzebowania szpitali:
+Pracownikowi wyświetla się informacja o obecnym braku zapotrzebowania i wylogowuje się on z systemu, ze względu na brak zgłoszeń.
+Wprowadzone przez pracownika dane są niepoprawne lub niekompletne:
+Po naciśnięciu przez pracownika przycisku do walidacji zgodności i wydania, system wyświetla błąd informujący o niepoprawności danych i wskazuje, które pole należy poprawić. Następnie przechodzi dalej.
+Nieudana walidacja zgodności (grupa krwi biorcy nie jest kompatybilna z grupą krwi dawcy):
+Po wypełnieniu formularza danymi przez pracownika i wciśnięciu przycisku "waliduj zgodność i wydaj", system wyświetla informację w polu "Wynik walidacji zgodności". Oznaczona jest ona czerwonym obramowaniem i napisem "Niezgodne - proces przerwany".
+4. Zależności czasowe:
+Częstotliwość wykonania: zależna od zapotrzebowania szpitali, zwykle kilka razy dziennie
+ Przewidywane spiętrzenia: w okresie wakacyjnym (stali krwiodawcy biorą urlopy i wyjeżdżają na wakacje)
+ typowy czas realizacji: 5-6 minut
+ maksymalny czas realizacji: nieokreślony
+5. Wartości uzyskiwane przez aktora po zakończeniu przypadku użycia
+Potwierdzenie przyjęcia wydania.
+Możliwość realizacji wydania przez pracowników magazynu.
+Przypadek użycia "Dodawanie donacji":
+1. Uczestniczący aktorzy:
+Pracownik Laboratorium
+2. Podstawowy ciąg zdarzeń
+Po otrzymaniu pobranej krwi pracownik laboratorium loguje się do systemu i przechodzi do modułu laboratorium
+Następnie wypełnia formularz "Rejestracja donacji"
+Po wypełnieniu formularza pracownik naciska przycisk "Zapisz donację"
+System sprawdza poprawność i kompletność wprowadzonych danych
+Kod donacji - 8 cyfr poprzedzonych literą, a za nimi po myślniku kolejne dwie cyfry
+Dawca - dodawany za pomocą numeru PESEL lub nazwiska, pole przyjmuje albo same litery albo dokładnie 11 cyfr
+Data pobrania - wybór daty z kalendarza,
+Grupa krwi - rozwijane menu
+Rh - rozwijane menu
+Po walidacji formularza wyskakuje okienko z potwierdzeniem dodania
+3. Alternatywny ciąg zdarzeń
+Błąd podczas wprowadzania danych:
+System oznacza pola, które wymagają poprawy. Pracownik wprowadza dane ponownie i zatwierdza dodanie donacji.
+4. Zależności czasowe:
+Częstotliwość wykonania: zależna od dziennej ilości donacji, średnio kilkadziesiąt dziennie
+Przewidywane spiętrzenia: brak oczekiwanych
+Typowy czas realizacji: 2-3 minuty
+Maksymalny czas realizacji: nieokreślony
+5. Wartości uzyskiwane przez aktora po zakończeniu przypadku użycia
+Pojawienie się donacji w oknie oczekujących na podział donacji.
+Możliwość przebadania i podzielenia krwi na składniki oraz dodanie składników do systemu.
+Przypadek użycia "Badanie i rozdział składników krwi":
+1. Uczestniczący aktorzy
+Pracownik laboratorium
+2. Podstawowy ciąg zdarzeń:
+Po zalogowaniu do systemu, pracownik przechodzi do panelu laboratorium. 
+Na panelu "donacje oczekujące na podział" wciska przycisk przejdź obok donacji sygnalizując pracę nad próbką
+Następnie w formularzu "Badania i rozdzielanie składników" wypełnia pola.
+Kod donacji - 8 cyfr poprzedzonych literą, a za nimi po myślniku kolejne dwie cyfry,
+Wyniki badań - pole tekstowe do wpisania składników z donacji,
+Data ważności składników - wybór daty z kalendarza,
+Po uzupełnieniu formularza pracownik naciska przycisk "rozdziel na osocze, płytki, krwinki czerwone",
+System waliduje poprawność i kompletność pól
+Następnie składniki zostają dodane przez system do okienka "Lista składników z donacji"
+3. Alternatywny ciąg zdarzeń
+Braki lub błędy w formularzu
+System wyświetla błędy i otwiera formularz do zmiany. Pracownik nanosi poprawki i zatwierdza formularz.
+Składniki niezdatne do użycia
+Pracownik wpisuje w polu wyników badań niezdatność składników do użycia i zostaną one dodane do listy ze statusem kwarantanny, następnie zleca utylizację.
+4. Zależności czasowe
+Częstotliwość wykonania: zależna od ilości dostępnych do badań donacji, średnio kilkanaście dziennie
+Przewidywane spiętrzenia: brak oczekiwanych
+Typowy czas realizacji: 10-15 minuty
+Maksymalny czas realizacji: nieokreślony
+5. Wartości uzyskiwane przez aktora po zakończeniu przypadku użycia
+Lista składników gotowych do dostarczania szpitalom.
+Przypadek użycia "Rejestracja dawcy":
+1. Uczestniczący aktorzy:
+Pracownik Rejestracji
+2. Podstawowy ciąg zdarzeń:
+Pracownik Rejestracji loguje się do systemu i przechodzi do modułu dawcy
+Następnie w panelu "Rejestracja/edycja dawcy" wpisuje dane dawcy
+Imię - tylko litery
+Nazwisko - tylko litery
+Numer PESEL - dokładnie 11 liczb
+Grupa krwi - rozwijane menu (opcjonalne)
+Czynnik Rh - rozwijane menu (opcjonalne)
+Data ostatniej donacji - wybór daty w wyskakującym kalendarzu
+Status - rozwijane menu
+Pracownik wciska przycisk "Zapisz dane dawcy"
+System sprawdza czy dane są poprawne i wszystkie pola wypełnione
+System weryfikuje również czy dawca kwalifikuje się do donacji
+Dane trafiają do systemu lub są aktualizowane
+3. Alternatywny ciąg zdarzeń
+Braki lub błędy w formularzu
+System wyświetla błędy i otwiera formularz do zmiany. Pracownik nanosi poprawki i zatwierdza formularz, po czym dawca zostaje poprawnie dodany.
+Dawca nie kwalifikuje się lub nie minął odpowiedni czas od ostatniej donacji
+Po wypełnieniu formularza i próbie zatwierdzenia wyskakuje komunikat o niedopuszczeniu dawcy. System zamyka obecny formularz.
+4. Zależności czasowe
+Częstotliwość wykonania: zależna od ilości potencjalnych dawców, średnio kilkadziesiąt razy dziennie
+Przewidywane spiętrzenia: brak oczekiwanych
+Typowy czas realizacji: zależy od długości weryfikacji kwalifikacji, średnio 15-20 minut
+Maksymalny czas realizacji: nieokreślony
+5. Wartości uzyskiwane przez aktora po zakończeniu przypadku użycia
+Informacja w systemie o nowym dawcy lub aktualizacji jego danych.
+Dopuszczenie dawcy do donacji.
+Nowe lub zaktualizowane dane są od teraz wyświetlane podczas wyszukiwania danego dawcy.
+Diagramy czynności:
+Badanie i magazynowanie składników krwi
+
+
+
+
+
+Wydanie preparatu
+
+Rejestracja dawcy
+
+Diagramy Przebiegu:
+Diagram wydania
+Ciąg zdarzeń w diagramie:
+ZlecWydanie() - pracownik wydania inicjuje proces.
+Utworzenie obiektu Wydanie().
+wydajPreparat(zapotrzebowanie) - próba realizacji zapotrzebowania.
+walidujZgodnoscGrupyKrwi(skladnik, zapotrzebowanie) - sprawdzenie zgodności.
+Jeśli niezgodne → przerwijProcesAlert() + komunikat „Alert na czerwono”.
+Jeśli zgodne → setStatus("Zrealizowane") + komunikat „Pozytywny (Wydano)”.
+Potwierdzenie wydania.
+Zniszczenie obiektu Wydanie() - zakończenie procesu.
+
+
+
+Diagram donacji
+Ciąg zdarzeń w diagramie:
+WprowadzDaneDonacji(dane) - pracownik laboratorium wprowadza dane.
+SprawdzKompletnoscFormularza(dane) - system sprawdza kompletność danych.
+Jeśli dane błędne → komunikat „Prośba o poprawę danych (Błąd Walidacji)”.
+Jeśli dane poprawne → dodajDonacje(dawca).
+Utworzenie obiektu Donacja() + zwrot Donacja().
+System zwraca Potwierdzenie.
+Interfejs wyświetla okienko z informacją o sukcesie.
+
+
+
+
+
+
+
+
+
+Diagram rejestracji dawcy
+Ciąg zdarzeń w diagramie:
+WprowadzDane() - pracownik rejestracji wprowadza dane.
+sprawdzPoprawnosc() - system sprawdza poprawność danych.
+Jeśli dane błędne → komunikat o błędach i poprawa.
+Jeśli dane poprawne → zarejestrujDawce(dane).
+weryfikujKwalifikowalnosc(dawca) - sprawdzenie kwalifikacji.
+Jeśli niekwalifikowany → odrzucDawcePowod(powod) + komunikat „Brak kwalifikacji”.
+Jeśli kwalifikowany → utworzenie obiektu Dawca() + komunikat „Informacja o dopuszczeniu”.
+
+PERSPEKTYWA PROJEKTOWA
+Diagram komponentów:
+
+
+
+
+
+
+Opis diagramu komponentów:
+Diagram komponentów przedstawia fizyczną architekturę systemu Regionalnego Centrum Krwiodawstwa. Każdy komponent odpowiada jednemu modułowi logicznemu z diagramu pakietów i zawiera klasy oraz funkcjonalności opisane w diagramie klas. Komponenty komunikują się ze sobą poprzez jawnie zdefiniowane interfejsy, które odpowiadają metodom publicznym wykorzystywanym między modułami. Diagram odzwierciedla również przepływ danych i cykl życia obiektów.
+Opis poszczególnych komponentów:
+1. Komponent „Administracja”
+Komponent odpowiedzialny za zarządzanie użytkownikami systemu, ich rolami oraz aktywnością kont.
+Zawiera klasy:
+Administracja,
+Użytkownik,
+role: Administrator, PracownikRejestracji, PracownikLaboratorium, PracownikMagazynu, PracownikWydan.
+Udostępnia interfejs:
+zarzadzajUzytkownikami() - wykorzystywany przez wszystkie pozostałe moduły do aktywacji/dezaktywacji kont użytkowników.
+2. Komponent „Moduł Dawcy”
+Odpowiada za rejestrację i kwalifikację dawców.
+Zawiera klasy:
+Rejestracja,
+Dawca.
+Udostępnia interfejs:
+dodajDonacje(dawca) - wywoływany przez moduł Laboratorium po pobraniu krwi.
+Komponent korzysta z:
+Administracji (zarządzanie statusem użytkownika),
+Laboratorium (przekazanie donacji do badania).
+3. Komponent „Moduł Laboratorium”
+Realizuje proces badania krwi i rozdzielania jej na składniki.
+Zawiera klasy:
+Laboratorium,
+Donacja,
+WynikBadania.
+Udostępnia interfejsy:
+rozdzielSkladniki(donacja) - przekazuje składniki do Magazynu,
+zlecUtylizacje(donacja) - inicjuje proces utylizacji.
+Korzysta z:
+Modułu Dawcy (dodanie donacji),
+Magazynu (przekazanie składników).
+4. Komponent „Moduł Magazyn”
+Odpowiada za przechowywanie składników krwi, kontrolę temperatury i ważności.
+Zawiera klasy:
+Magazyn,
+Lodowka,
+CzujnikTemperatury,
+SkladnikKrwi.
+Udostępnia interfejs:
+wydajPreparat(zapotrzebowanie) - wykorzystywany przez moduł Wydania.
+Korzysta z:
+Laboratorium (odbiór składników),
+Wydania (walidacja zgodności grupy krwi).
+5. Komponent „Moduł Wydania”
+Realizuje proces obsługi zapotrzebowań szpitali i wydawania preparatów.
+Zawiera klasy:
+Wydanie,
+Szpital,
+Zapotrzebowanie.
+Udostępnia interfejsy:
+walidujZgodnoscGrupyKrwi(skladnik, zapotrzebowanie),
+wydajPreparat(zapotrzebowanie).
+Korzysta z:
+Magazynu (pobranie składników),
+Analityki (statystyki i raporty).
+6. Komponent „Moduł Analityka”
+Odpowiada za generowanie raportów i statystyk.
+Zawiera klasy:
+Analityka,
+Raport,
+Statystyka.
+Udostępnia interfejs:
+statystykiWOkresie(dataOd, dataDo).
+
+7. Komponent „Baza danych RCK”
+Centralne repozytorium danych systemu. Wszystkie moduły zapisują i odczytują dane z tego komponentu. Diagram komponentów pokazuje to jako zależność jednokierunkową: moduły -> baza danych. 
+
+Diagram klas:
+
+Uporządkowany alfabetycznie wykaz wszystkich klas:
+1. Administrator
+Opis:
+Klasa reprezentująca administratora systemu odpowiedzialnego za zarządzanie użytkownikami, konfiguracją systemu oraz nadzorem nad historią operacji.
+Dziedziczy po:
+Uzytkownik
+Metody:
+zaloguj() : bool - logowanie administratora do systemu.
+wyloguj() : bool  - wylogowanie administratora z systemu.
+2. Administracja
+Opis:
+Klasa odpowiedzialna za zarządzanie użytkownikami systemu oraz konfigurację czujników temperatury.
+Metody:
+zarzadzajUzytkownikami()  : void - zarządzanie użytkownikami systemu.
+filtrujUzytkownikowPoRoli(rola : string) : List<Uzytkownik - filtrowanie użytkowników według przypisanej roli oraz zwrócenie listy użytkowników spełniających kryterium.
+konfigurujCzujnikiTemperatury()  : void - konfiguracja parametrów czujników temperatury.
+3. Analityka
+Opis:
+Klasa odpowiedzialna za analizę danych systemowych, tworzenie raportów oraz generowanie statystyk dotyczących donacji i zapotrzebowania.
+Metody:
+generujRaporty() : Raport - generowanie raportów analitycznych.
+przegladajStatystyki() : Statystyka - wyświetlanie statystyk systemowych.
+statystykiWOkresie(dataOd : date, dataDo : date) : Statystyka - generowanie statystyk dla wybranego okresu czasu.
+4. CzujnikTemperatury
+Opis:
+Klasa reprezentująca czujnik temperatury monitorujący warunki przechowywania składników krwi.
+Atrybuty:
+idCzujnika : int - identyfikator czujnika.
+aktualnaTemperatura : float - aktualna temperatura odczytana przez czujnik.
+statusAlarmu : bool - status alarmu temperatury.
+zakresMin : float - minimalna dopuszczalna temperatura.
+zakresMax : float - maksymalna dopuszczalna temperatura.
+Metody:
+odczytajTemperature() : float - odczyt aktualnej temperatury.
+wyslijAlert() : void - wysłanie alertu o przekroczeniu temperatury.
+ustawZakres(min : float, max : float) : void - ustawienie zakresu poprawnej temperatury.
+5. Dawca
+Opis:
+Klasa reprezentująca dawcę krwi zarejestrowanego w systemie.
+Atrybuty:
+idDawcy : int - identyfikator dawcy.
+imie : string - imię dawcy.
+nazwisko : string - nazwisko dawcy.
+grupaKrwi : string - grupa krwi dawcy.
+czynnikRh : string - czynnik Rh dawcy.
+dataOstatniejDonacji : date - data ostatniego oddania krwi.
+kwalifikowalny : bool - informacja o możliwości oddania krwi.
+skladniki : List<Donacja> - lista donacji przypisanych do dawcy.
+Metody:
+zweryfikujKwalifikacje() : bool - sprawdzenie kwalifikacji dawcy.
+zarejestrujDonacje() : void - zapisanie nowej donacji.
+6. Donacja
+Opis:
+Klasa reprezentująca pojedynczą donację krwi wykonaną przez dawcę.
+Atrybuty:
+kodDonacji : string - unikalny kod donacji.
+dataPobrania : date - data pobrania krwi.
+status : string - aktualny status donacji.
+wynikBadania : WynikBadania - wynik badań laboratoryjnych.
+skladniki : List<SkładnikKrwi> - lista składników uzyskanych z donacji.
+Metody:
+oznaczStatus() : void - zmiana statusu donacji.
+czyKompletna() : bool - sprawdzenie kompletności danych donacji.
+7. Laboratorium
+Opis:
+Klasa odpowiedzialna za badanie krwi oraz rozdzielanie jej na składniki.
+Metody:
+dodajDonacje(dawca : Dawca) : Donacja - dodanie nowej donacji.
+zbadajKrew(donacja : Donacja) : WynikBadania - wykonanie badań laboratoryjnych krwi.
+rozdzielSkladniki(donacja : Donacja) : List<SkładnikKrwi> - rozdzielenie krwi na składniki.
+zlecUtylizacje(donacja : Donacja) : void - skierowanie donacji do utylizacji.
+podgladDonacji(id : string) : Donacja - podgląd informacji o donacji.
+8. Lodówka
+Opis:
+Klasa reprezentująca lodówkę magazynową przechowującą składniki krwi.
+Atrybuty:
+idLodówki : int - identyfikator lodówki.
+nazwa : string - nazwa lodówki.
+temperaturaDocelowaMin : float - minimalna temperatura docelowa.
+temperaturaDocelowaMax : float - maksymalna temperatura docelowa.
+Metody:
+sprawdźTemperaturę() : bool - kontrola temperatury lodówki.
+pobierzSkładniki() : List<SkładnikKrwi> - pobranie listy przechowywanych składników krwi.
+9. Magazyn
+Opis:
+Klasa odpowiedzialna za zarządzanie magazynem składników krwi oraz kontrolę ich ważności.
+Atrybuty:
+jednostki : List<SkładnikKrwi> - lista składników przechowywanych w magazynie.
+Metody:
+zarzadzajJednostkami() : void - zarządzanie jednostkami krwi.
+usunJednostke(id : string) : void - usunięcie jednostki z magazynu.
+podgladKwarantanny() : List<SkładnikKrwi> - wyświetlenie składników objętych kwarantanną.
+filtrujPoGrupieIRh(grupa : string, rh : string) : List<SkładnikKrwi> - filtrowanie składników według grupy krwi i Rh.
+filtrujPoBliskiejWaznosci(dni : int) : List<SkładnikKrwi> - wyszukiwanie składników z krótkim terminem ważności.
+automatycznaBlokadaPrzeterminowanych() : void - automatyczne blokowanie przeterminowanych składników.
+sprawdzBrakujaceGrupy() : List<string> - sprawdzanie brakujących grup krwi w magazynie.
+10. PracownikLaboratorium
+Opis:
+Klasa reprezentująca pracownika laboratorium obsługującego proces badania krwi.
+Dziedziczy po:
+Uzytkownik
+Metody:
+zaloguj() : bool - logowanie do systemu.
+wyloguj() : bool - wylogowanie z systemu.
+11. PracownikMagazynu
+Opis:
+Klasa reprezentująca pracownika magazynu odpowiedzialnego za przechowywanie składników krwi.
+Dziedziczy po:
+Uzytkownik
+Metody:
+zaloguj() : bool - logowanie do systemu.
+wyloguj() : bool - wylogowanie z systemu.
+12. PracownikRejestracji
+Opis:
+Klasa reprezentująca pracownika odpowiedzialnego za rejestrację dawców.
+Dziedziczy po:
+Uzytkownik
+Metody:
+zaloguj() : bool - logowanie do systemu.
+wyloguj() : bool - wylogowanie z systemu.
+13. PracownikWydan
+Opis:
+Klasa reprezentująca pracownika odpowiedzialnego za wydawanie preparatów krwi.
+Dziedziczy po:
+Uzytkownik
+Metody:
+zaloguj() : bool - logowanie do systemu.
+wyloguj() : bool - wylogowanie z systemu.
+14. Raport
+Opis:
+Klasa reprezentująca raport generowany przez moduł analityczny.
+Atrybuty:
+idRaportu : int - identyfikator raportu.
+dataGenerowania : date - data wygenerowania raportu.
+typ : string - typ raportu.
+15. Rejestracja
+Opis:
+Klasa odpowiedzialna za obsługę procesu rejestracji i kwalifikacji dawców.
+Metody:
+wyszukajDawce(id : string) : Dawca - wyszukiwanie dawcy w systemie.
+zarejestrujDawce(dane : Dawca) : void - dodanie nowego dawcy.
+weryfikujKwalifikowalnosc(dawca : Dawca) : bool - sprawdzenie możliwości oddania krwi.
+odrzucDawcePowod(powod : string) : void - odrzucenie dawcy wraz z podaniem przyczyny.
+wyslijPowiadomienieOBrakach(grupaKrwi : string) : void - wysłanie powiadomień o brakach krwi.
+
+
+16. SkładnikKrwi
+Opis:
+Klasa reprezentująca pojedynczy składnik krwi przechowywany w systemie.
+Atrybuty:
+idSkladnika : int - identyfikator składnika.
+typ : string - typ składnika krwi.
+grupaKrwi : string - grupa krwi składnika.
+czynnikRh : string - czynnik Rh składnika.
+dataWaznosci : date - termin ważności składnika.
+status : string - aktualny status składnika.
+Metody:
+sprawdzWaznosc() : bool - sprawdzenie terminu ważności.
+oznaczPrzeterminowany() : void - oznaczenie składnika jako przeterminowanego.
+17. Statystyka
+Opis:
+Klasa przechowująca dane statystyczne dotyczące działania systemu.
+Atrybuty:
+liczbaDonacji : int - liczba donacji.
+liczbaZapotrzebowan : int - liczba zgłoszonych zapotrzebowań.
+liczbaDostepnychJednostek : int - liczba dostępnych jednostek krwi.
+okresOd : date - początek analizowanego okresu.
+okresDo : date - koniec analizowanego okresu.
+18. Szpital
+Opis:
+Klasa reprezentująca szpital korzystający z systemu zamówień krwi.
+Atrybuty:
+idSzpitala : int - identyfikator szpitala.
+nazwa : string - nazwa szpitala.
+Metody:
+zlozZapotrzebowanie() : void - zgłoszenie zapotrzebowania na krew.
+odbierzPreparat() : void - odbiór preparatu krwi.
+19. Uzytkownik
+Opis:
+Abstrakcyjna klasa bazowa reprezentująca użytkownika systemu.
+Atrybuty:
+idUzytkownika : int - identyfikator użytkownika.
+imie : string - imię użytkownika.
+rola : string - rola użytkownika w systemie.
+czyAktywny : bool - status aktywności konta.
+Metody:
+zaloguj() : bool - logowanie użytkownika.
+wyloguj() : bool - wylogowanie użytkownika.
+20. Wydanie
+Opis:
+Klasa odpowiedzialna za proces wydawania preparatów do szpitali.
+Metody:
+zarejestrujZapotrzebowanie(szpital : Szpital, grupaKrwi : string, ilosc : int) : Zapotrzebowanie - rejestracja zapotrzebowania szpitala.
+wydajPreparat(zapotrzebowanie : Zapotrzebowanie) : void - wydanie preparatu krwi.
+walidujZgodnoscGrupyKrwi(skladnik : SkładnikKrwi, zapotrzebowanie : Zapotrzebowanie) : bool - sprawdzenie zgodności grup krwi.
+przerwijProcesAlert() : void - przerwanie procesu wydania w przypadku błędu.
+21. WynikBadania
+Opis:
+Klasa reprezentująca wynik badań laboratoryjnych wykonanych dla donacji.
+Atrybuty:
+idWyniku : int - identyfikator wyniku badania.
+status : string - status wyniku badania.
+opis : string - opis wyniku badania.
+Metody:
+czyPozytywny() : bool - sprawdzenie poprawności wyniku badania.
+22. Zapotrzebowanie
+Opis:
+Klasa reprezentująca zapotrzebowanie zgłoszone przez szpital.
+Atrybuty:
+idZapotrzebowania : int - identyfikator zapotrzebowania.
+grupaKrwi : string - wymagana grupa krwi.
+ilosc : int - liczba wymaganych jednostek krwi.
+status : string - status realizacji zapotrzebowania.
+Metody:
+walidujZgodnosc() : bool - sprawdzenie poprawności zapotrzebowania.
+przerwijProces() : void - przerwanie procesu realizacji zapotrzebowania.
+
+
+
+Diagramy stanów:
+Stan_Dawca
+Niezarejestrowany - stan początkowy obiektu, który oznacza nowego niezarejestrowanego dawcę.
+Zarejestrowany - dawca został zarejestrowany.
+Weryfikacja - dawca oczekuje na weryfikację.
+Aktywny - dawca oznaczony jako aktywny.
+Zawieszony - dawca widnieje w systemie jako nieaktywny.
+Odrzucony - dawca nie kwalifikuje się i jest odrzucony.
+Archiwalny - usunięty dawca widnieje w systemie.
+Opis przejść między stanami:
+Proces zaczyna się od dodania obiektu dawcy o stanie Niezarejestrowany. Po pomyślnej rejestracji (zarejestrujDawce(dane)) przechodzi on w stan Zarejestrowany. Następnie zostają weryfikowane jego kwalifikacje (weryfikujKwalifikowalnosc()) i zmienia stan na Weryfikacja.
+Jeśli weryfikacja nie ma pozytywnego wyniku (weryfikowalnosc == false or dataOstatniejDonacji not OK) to dawca zostaje odrzucony (odrzucDawcePowod(powod)) i otrzymuje stan Odrzucony. Po upłynięciu odpowiedniego czasu (uplynalOkresWykluczenia) dawca będzie mógł ponownie starać się o weryfikację. Jeśli weryfikacja zakończyła się sukcesem (weryfikowalnosc == true and dataOstatniejDonacji  OK) to dawca przyjmuje stan Aktywny. W przypadku długiego braku aktywności (zarzadzajUzytkownikami() / Uzytkownik.czyAktywny = false) zostaje on zawieszony i przechodzi w stan Zawieszony. Po zakończeniu zawieszenia (zarzadzajUzytkownikami() / Uzytkownik.czyAktywny = true) dawca trafia do stanu Zarejstrowany. Jeśli dawca chciałby zakończyć swoją działalność, powinien złożyć wniosek o usunięcie z systemu i zmieniony zostanie jego status (WniosekOUsuniecie / zarzadzajUzytkownikami), otrzymuje on następnie stan Archiwalny. Stan Archiwalny kończy cykl życia obiektu i prowadzi do stanu końcowego diagramu. 
+Stan_SkladnikKrwi
+
+Utworzony - stan początkowy obiektu oznaczający nowo zarejestrowany składnik krwi.
+WMagazynie - preparat znajduje się w magazynie i podlega kontroli warunków przechowywania.
+DoWydania - składnik krwi spełnia wymagania i oczekuje na wydanie.
+Wydany - preparat został poprawnie wydany zgodnie z zapotrzebowaniem.
+Kwarantanna - preparat został odizolowany z powodu nieprawidłowych warunków przechowywania.
+ZablokowanyDoWydania - preparat nie może zostać wydany, np. z powodu niezgodności grupy krwi.
+ZwolnionyZKwarantanny - preparat został ponownie dopuszczony do użycia po pozytywnej kontroli.
+Przeterminowany - preparat utracił ważność.
+ZleconaUtylizacja - dla preparatu rozpoczęto procedurę utylizacji.
+Utylizowany - preparat został trwale zutylizowany.
+Opis przejść między stanami:
+Proces rozpoczyna się od utworzenia składnika krwi w stanie Utworzony. Po przyjęciu preparatu do magazynu (przyjetoDoMagazynu) obiekt przechodzi do stanu WMagazynie. W stanie magazynowym preparat jest monitorowany pod względem temperatury oraz daty ważności. Jeśli kontrola temperatury zakończy się niepowodzeniem (Lodówka.sprawdzTemperature() == false), składnik zostaje przeniesiony do stanu Kwarantanna. Następnie może zostać oznaczony jako ZablokowanyDoWydania poprzez zdarzenie zablokowanoDoWydania. Po pozytywnej weryfikacji preparat może zostać zwolniony z kwarantanny (zwolnionoZKwarantanny) i przejść do stanu ZwolnionyZKwarantanny. Następnie, po wykonaniu operacji przywroconoDoMagazynu, ponownie trafia do stanu WMagazynie.
+Jeżeli preparat spełnia warunki wydania (spelniaWarunkiWydania), przechodzi do stanu DoWydania. W tym stanie wykonywana jest walidacja zgodności grupy krwi z zapotrzebowaniem. Gdy walidacja zakończy się sukcesem (Wydanie.walidujZgodnoscGrupyKrwi(...) == true), wykonywana jest operacja Wydanie.wydajPreparat(...), a preparat przechodzi do stanu Wydany. W przeciwnym przypadku trafia do stanu ZablokowanyDoWydania.
+Jeśli podczas magazynowania preparat utraci ważność (sprawdzWaznosc() == false), przechodzi do stanu Przeterminowany. Następnie wykonywana jest operacja Magazyn.automatycznaBlokadaPrzeterminowanych(), która powoduje przejście do stanu ZleconaUtylizacja. Po zakończeniu procesu utylizacji (utylizacjaWykonana) preparat przechodzi do stanu Utylizowany.
+Stany Wydany oraz Utylizowany kończą cykl życia obiektu i prowadzą do stanu końcowego diagramu.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stan_Donacja
+
+Utworzona - stan początkowy obiektu oznaczający nową donację
+WPrzyjeciu - donacja oczekuje na realizację
+WBadaniu - przyjęta krew jest badana pod względem zdatności użycia.
+BadaniePozytywne - krew została sklasyfikowana jako zdatna do użycia.
+RozdzialSkladnikow - krew przechodzi do procesu dzielenia na składniki
+SkladnikiGotowe - krew została podzielona na składniki
+PrzekazanoDoMagazynu - składniki zostają przekazane do magazynu.
+Zrealizowana - donacja zostaje oznaczona jako zrealizowana i zakończona.
+BadanieNegatywne - krew zostaje sklasyfikowana jako niezdatna do użycia.
+ZleconaUtylizacja - niezdatna krew otrzymuje zlecenie utylizacji.
+Utylizowana - krew zostaje zutylizowana.
+Anulowana - donacja nie dochodzi do skutku i zostaje anulowana.
+Opis przejść między stanami:
+Cały proces ma swój początek w momencie utworzenia donacji w stanie Utworzona. Po dodaniu donacji do przyjęcia (dodanoDoPrzyjecia) donacja przechodzi w stan WPrzyjeciu. Jeśli donacja nie dochodzi do skutku (anulowanoDonacje) to przechodzi ona w stan Anulowana. W momencie przyjęcia krwi rozpoczynane są badania (rozpocznijBadania) i badana krew przechodzi w stan WBadaniu. Jeśli wynik badania krwi będzie negatywny (WynikBadania.czyPozytywny == false) to przechodzi ona w stan BadanieNegatywne. Następnie zostaje wykonana operacja Laboratorium.zlecUtylizacje(self), po której wykonaniu krew przechodzi w stan ZleconaUtylizacja. Po pomyślnie wykonanej utylizacji (utylizacjaWykonana) przechodzi w stan Utylizowana. Jeśli wynik badania krwi był pozytywny (WynikBadania.czyPozytywny == true) to pobrana krew przechodzi w stan BadaniePozytywne. W dalszej kolejności wykonana zostaje operacja Laboratorium.rozdzielSkladniki(self), po czym krew przechodzi do stanu RozdzialSkladnikow. Po pomyślnym podziale składniki krwi zostaje oznaczone jako gotowe do przekazania do magazynu i przechodzą w stan SkladnikiGotowe. Składniki zostają przekazane do magazynu (przekazanoDoMagazynu) i wchodzą w stan PrzekazanoDoMagazynu. Jeśli wszystkie składniki zostały pomyślnie przekazane i otrzymały status „WMagazynie” (składniki != empty and all s in składniki -> s.status == „WMagazynie”) to donacja przechodzi w stan Zrealizowana.
+Stany Zrealizowana, Utylizowana i Anulowana kończą cykl życia obiektu i prowadzą do stanu końcowego. 
+
+
+
+
+
+Propozycje interfejsu użytkownika:
+Pulpit
+Szybki dostęp do najważniejszych modułów systemu, szybki podgląd potrzebnych danych, podgląd ostatnich operacji na stronie.
+
+Moduł Dawcy
+Formularz rejestracji dawcy do systemu, wyszukanie go i wyświetlenie w liście, wysłanie powiadomienia dla dawcy. 
+
+Moduł Laboratorium
+Formularz rejestracji donacji do laboratorium, przegląd donacji oczekujących na podział, zadeklarowanie badań i rozdzielenia składników na podstawie kodu, oraz wyświetlenie listy składników pobranych z danej donacji.
+
+Moduł Magazyn
+Wyświetlenie wszystkich elementów w magazynie i wyświetlenie ich na liście, filtrowanie listy elementów na podstawie grupy krwi, współczynniku Rh, oraz statusie, a także integracja z czujnikami temperatury w danych lodówkach z workami z krwią.
+
+Moduł Wydania
+Wyświetlenie aktualnego zapotrzebowania szpitali, formularz wydania preparatu, oraz wyświetlenie wyników walidacji zgodności na bieżąco.
+
+Moduł Analityka
+Wyświetlanie statystyk donacji dla danych grup krwi filtrowane po okresie w którym donacja miała miejsce, wyświetlenie statystyk zapotrzebowania w regionie, formularz do generowania raportów.
+
+Moduł Administracja
+Panel Administratora strony, wyświetlanie bazy użytkowników, dodawanie, edytowanie użytkownika oraz konfiguracja czujników temperatury dla danej lodówki.
+
+W zaproponowanym przez nas interfejsie rolę okna głównego pełni cała strona z kolumnowym menu głównym po lewej stronie, które pozwala nam swobodnie przemieszczać się pomiędzy modułami. Naszym menu podręcznym są szybkie akcje i opcje (np. akcja->przejdź w moduł laboratorium). Formatkami dialogowymi natomiast są m.in. karty z rejestrowaniem dawców/donacji. 
+
+
+
+WYMAGANIA NIEFUNKCJONALNE DLA SYSTEMU
+Oszacowanie wielkości bazy danych:
+System przechowuje dane dotyczące dawców, donacji, badań oraz składników krwi.
+Szacowana liczba rekordów:
+Dawcy: ok. 1 000 - 10 000
+Donacje: ok. 10 000 - 100 000 rocznie
+Składniki krwi: ok. 20 000 - 200 000 rocznie
+Wyniki badań: odpowiadające liczbie donacji
+Szacowana wielkość bazy danych:
+mały system: ~500 MB - 2 GB
+system rozbudowany: do ok. 10 GB (wieloletnia historia danych)
+Propozycja wymaganych czasów odpowiedzi:
+Operacje podstawowe (logowanie, przegląd danych dawcy): do 2 sekund
+Wyszukiwanie dawców / składników krwi: do 5 sekund
+Rejestracja donacji / aktualizacja danych: do 3-6 sekund
+Operacje raportowe i analityczne: do 5-15 sekund
+Generowanie zestawień historycznych: do 30 sekund
+Oszacowanie liczby i typów potrzebnych stanowisk pracy użytkowników systemu:
+Administrator systemu - 1-2 osoby
+zarządzanie użytkownikami, danymi i konfiguracją systemu
+Pracownik rejestracji dawców - 2-5 osób
+rejestracja dawców, obsługa donacji
+Personel laboratoryjny - 3-10 osób
+wykonywanie badań krwi i obsługa wyników
+Pracownik magazynu krwi - 2-6 osób
+zarządzanie składnikami krwi, kontrola przechowywania
+Pracownik szpitala (odbiorca) - wiele placówek
+zgłaszanie zapotrzebowania i odbiór składników krwi
+
+PROPOZYCJA TECHNOLOGII INFORMATYCZNYCH
+Diagram wdrożenia:
+1. Serwer Główny
+Ilość: 1
+Specyfikacja sprzętowa: Procesor 8x Xeon-3.2GHz, 64 GB RAM.
+Zależności i Interfejsy:
+Wystawia (udostępnia dla klientów): IObslugaDawcow, IObslugaLaboratorium, IPrzegladAnalityki (dla stacji pracowników), IZarzadzanie (dla administratorów), IZapotrzebowania (dla szpitali) oraz IPomiaryTemp (dla lodówek).
+Wystawia (wewnętrznie): Baza danych udostępnia dla modułów serwera interfejsy IOdczyt (dla wszystkich modułów) i IZapis (dla wszystkich z wyjątkiem Analityki).
+Korzysta z: IKonfiguracjaLodowki (Moduł Magazynu używa tego interfejsu do zarządzania ustawieniami fizycznej lodówki).
+2. Stacja Pracownika RCK
+Ilość: 20
+Specyfikacja sprzętowa: Procesor Intel Core i5, 8 GB RAM.
+Zależności i Interfejsy:
+Korzysta z: IObslugaDawcow, IObslugaLaboratorium oraz IPrzegladAnalityki. Połączenie z serwerem odbywa się poprzez aplikację PanelPracownika wewnątrz sieci lokalnej.
+3. Stacja Administratora
+Ilość: 2
+Specyfikacja sprzętowa: Procesor Intel Core i7, 16 GB RAM.
+Zależności i Interfejsy:
+Korzysta z: Interfejsu IZarzadzanie. Aplikacja PanelAdministratora komunikuje się wyłącznie z wydzielonym modułem administracyjnym na serwerze głównym.
+4. System Szpitalny
+Ilość: 5
+Zależności i Interfejsy:
+Korzysta z: IZapotrzebowania do składania zamówień na krew przez Internet przy użyciu ModulZapotrzebowan.
+5. Lodówka Magazynowa
+Ilość: 15
+Zależności i Interfejsy:
+Wystawia (udostępnia): IInterfejsCzujnika (nasłuchuje na odczyty z kabla) oraz IKonfiguracjaLodowki (nasłuchuje na polecenia systemowe z serwera).
+Korzysta z: IPomiaryTemp na serwerze.
+6. Czujnik Temperatury
+Ilość: 15
+Zależności i Interfejsy:
+Korzysta z: IInterfejsCzujnika. Urządzenie zbiera dane fizyczne (jako OdczytCzujnika) i przekazuje je bezpośrednio do lodówki po lokalnym połączeniu (Ethernet/kabel sygnałowy).
+7. Switch (Przełącznik Sieciowy)
+Ilość: 1
+Zależności i Interfejsy: Nie posługuje się interfejsami programistycznymi zdefiniowanymi w kodzie. Stanowi węzeł spajający komunikację kablową (Ethernet) od stacji i lodówek z łączem światłowodowym idącym do Serwera Głównego.
+
+PROPOZYCJA PLANU PRACY
+Legenda:
+Etapy pracy:
+Etap I - Analiza wymagań i wizja na projekt, czas trwania - 15 dni roboczych
+
+Etap II - Plan projektu, czas trwania - 25 dni roboczych
+Etap III - Realizacja projektu, czas trwania - 45 dni roboczych
+Etap IV - Przeprowadzanie testów, czas trwania - 45 dni roboczych
+Etap V - Szkolenia, czas trwania - 10 dni roboczych
+Etap VI - Wsparcie techniczne, czas trwania - 15 dni roboczych
+Przejścia między etapami:
+Aby przejść z etapu I do etapu II muszą zostać sporządzone wytyczne dotyczące projektu,
+Prace nad etapem III można rozpocząć, gdy zostanie opracowany budżet, przydział zadań w zespole oraz gdy zakończony będzie dobór potrzebnego sprzętu,
+Do etapu IV można przejść w trakcie prac nad implementacją modułów,
+Po przeprowadzeniu testów i symulacji można będzie rozpocząć szkolenia w etapie V,
+Przejście do etapu IV, którym jest wsparcie techniczne, zachodzi po zakończeniu szkoleń pracowników z etapu V.
+Alokacja zasobów ludzkich:
+Mamy w zespole menedżera projektu, analityka, inżyniera systemowego oraz dwóch uzupełniających się w obowiązkach programistów.
+Etap I:
+Menedżer projektu - Opracowanie projektu architektury systemu, sporządzenie wytycznych,
+Analityk - Analiza wymagań,
+Etap II:
+Menedżer projektu - określenie zasobów modułu, przypisanie zadań w zespole,
+Analityk - opracowanie budżetu oraz analiza ryzyka,
+Inżynier systemowy -  określenie zasobów modułu, analiza techniczna, dobór sprzętu,
+Etap III:
+Programiści -  stworzenie architektury systemu, zaimplementowanie modułów. przygotowanie interfejsu i optymalizacja systemu,
+Inżynier systemowy - montaż i konfiguracja urządzeń,
+Etap VI:
+Programiści - przeprowadzenie testów jednostkowych, testów integracji modułów, testy bezpieczeństwa oraz poprawki po testach akceptacyjnych,
+Inżynier systemowy - testy symulacyjne sprzętu,
+Menedżer projektu - testy akceptacyjne,
+Etap V:
+Inżynier systemowy - szkolenie w zakresie obsługi czujników lodówek magazynowych,
+Menedżer projektu - szkolenie do spraw rejestracji i wydań,
+Etap VI:
+Inżynier systemowy - wsparcie techniczne ze sprzętem,
+Menedżer projektu - nadzór oraz optymalizacja systemu.
+
+ANALIZA RYZYKA
+Analiza ryzyka projektu zawierająca wykaz przewidywanych zagrożeń (tylko zagrożenia specyficzne dla projektu):
+Atak hakerski (np. DDoS)
+Prawdopodobieństwo wystąpienia - niskie
+ Stopień szkodliwości - średni
+Propozycja metod zapobiegania - zapora sieciowa, CAPTCHA
+Plan awaryjny:
+Zablokowanie podejrzanego ruchu sieciowego
+Powiadomienie dostawcy hostingu
+Tymczasowe ograniczenie dostępności serwisu
+Włamanie do systemu
+Prawdopodobieństwo wystąpienia - średnie
+Stopień szkodliwości - bardzo duży
+Propozycja metod zapobiegania - silne hasła, szyfrowanie danych
+Plan awaryjny:
+Odcięcie dostępu do systemu
+Zmiana haseł administratorów
+Analiza naruszenia bezpieczeństwa
+Zmiana przepisów prawnych dotyczących przetwarzania danych medycznych
+Prawdopodobieństwo wystąpienia - niskie
+Stopień szkodliwości - bardzo duży
+Propozycja metod zapobiegania - monitorowanie zmian prawnych
+Plan awaryjny:
+Dostosowanie systemu do nowych przepisów
+Aktualizacja polityki przetwarzania danych
+W razie potrzeby ograniczenie funkcjonalności
+Błędna kwalifikacja dawcy do oddania krwi
+Prawdopodobieństwo wystąpienia - średnie
+Stopień szkodliwości - bardzo duży
+Propozycja metod zapobiegania - dokładna walidacja warunków kwalifikacji
+Plan awaryjny:
+Ponowna weryfikacja dawcy przez system lub administratora
+Korekta statusu dawcy w systemie
+Zablokowanie możliwości donacji do czasu wyjaśnienia
+Błąd systemu podczas rejestracji donacji lub dawcy
+Prawdopodobieństwo wystąpienia - średnie
+Stopień szkodliwości - duży
+Propozycja metod zapobiegania - walidacja danych wejściowych, testy jednostkowe i integracyjne
+Plan awaryjny:
+Ręczna korekta danych przez administratora
+Weryfikacja poprawności zapisów w bazie danych
+Powtórzenie operacji rejestracji
+
+
+
+
+
+
+
+
+KOSZTORYS
+
+Koszt wykonania poszczególnych etapów (koszt całkowity - 266370 zł):
+Etap I - Analiza wymagań i wizja na projekt - 23580 zł
+Projekt architektury systemu - 7050 zł
+Analiza wymagań i procesów RCK - 9480 zł
+Sporządzanie wytycznych - 7050 zł
+Etap II - Plan projektu - 39420 zł
+Określenie zakresu modułów - 7050 zł, 5280 zł
+Analiza techniczna - 5280 zł
+Opracowanie budżetu - 4740 zł
+Analiza ryzyka - 4740 zł
+Alokacja zasobów i podział zadań w zespole - 7050 zł
+Dobór urządzeń - 5280 zł
+Etap III - Realizacja projektu - 66450 zł
+Architektura i szkielet systemu - 12420 zł
+Implementacja modułów - 24840 zł
+Wdrożenie interfejsu i optymalizacja - 18630 zł
+Montaż i konfiguracja urządzeń - 10560 zł
+Etap IV - Przeprowadzanie testów - 75270 zł
+Testy jednostkowe systemu RCK - 18630 zł
+Testy integracyjne modułów - 12420 zł
+Testy akceptacyjne z personelem RCK - 14100 zł
+Poprawki po testach akceptacyjnych - 12420 zł
+Testy bezpieczeństwa i luk w zabezpieczeniach - 12420 zł
+Symulacja awarii sprzętu i alertów z lodówek - 5280 zł
+Etap V - Szkolenia - 24660 zł
+Podstawowa obsługa czujników magazynowych - 10560 zł
+Obsługa rejestracji i wydań przez personel - 14100 zł
+Etap IV - Wsparcie techniczne - 36990 zł
+Wsparcie techniczne ds. infrastruktury i sieci - 15840 zł
+Nadzór menedżerski i optymalizacja systemu - 21150 zł
+Koszt urządzeń:
+Serwer główny - 6000 zł
+15 czujników monitorujących temperaturę w lodówkach - 9000 zł
+2 stanowiska administratorskie - 10000 zł
+5 sztuk systemu szpitalnego - 5000 zł
+Switch - 1500 zł
+Stanowiska komputerowe dla 20 pracowników - 80000 zł
+Infrastruktura sieciowa - 1700 zł
+Utrzymanie serwera - 3500 zł rocznie
+Warunki płatności:
+Zleceniodawca zobowiązany jest do zapłacenia za każdy etap projektu w terminie do 14 dni od czasu ukończenia prac nad danym etapem. Płatności przebiegają za pomocą przelewów bankowych.
+Sposób odbioru: 
+Odbiór zakończonego zlecenia jest równoznaczny z opłaceniem ostatniego etapu pracy. Po zakończonym etapie wsparcia technicznego i dokonaniu ostatniej płatności prace zostają uznane za zakończone i zlecenie jest oficjalnie zamknięte.
+
+PRZEBIEG PRAC 
+
+Foldery z terminami cząstkowymi oznaczone są w nazwie, natomiast edytowalne sprawozdanie z projektu znajduje się w folderze “SprawozdanieZProjektu”
+Wygenerowany wykres przedstawiający historię commit-ów do repozytorium autorów projektu
+Yoshi6463 - Jan Kozłowski
+ADRN12-12 - Adrian Lachowicz
+PawlosZejen - Paweł Gronostajski
+
+
+
+
+
 
